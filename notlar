@@ -1,0 +1,41 @@
+Layer2
+Ethernet Header (Ethernet Frame)
+dest mac = hedef mac adresi
+source mac = kaynak mac adersi
+ether type = gelen isteğin tipi
+örnek ether typelar
+0x0800 (IPv4): IPv4 paketlerini temsil eder.
+0x0806 (ARP): ARP (Address Resolution Protocol) paketlerini temsil eder.
+0x86DD (IPv6): IPv6 paketlerini temsil eder.
+0x0805 (X.25): X.25 ağ protokolünü temsil eder.
+0x0808 (Frame Relay): Frame Relay ağ protokolünü temsil eder.
+0x0835 (RARP): RARP (Reverse Address Resolution Protocol) paketlerini temsil eder.
+0x809B (AppleTalk): AppleTalk ağ protokolünü temsil eder.
+0x86DD (IPv6): IPv6 paketlerini temsil eder.
+
+ether type ipv4 olduğunda ip header olarak devam eder
+Network Layer
+Ip Header
+Version (Versiyon): 4 bitlik bir alan. Bu, kullanılan IP versiyonunu belirtir. IPv4 için bu değer her zaman 4'tür.
+
+Header Length (Başlık Uzunluğu): 4 bitlik bir alan. Başlığın toplam uzunluğunu belirtir. 32-bit kelime sayısında ifade edilir. Yani, 5 ifadesi (5 * 32 bit = 160 bit), başlığın toplam uzunluğunu ifade eder.
+
+Type of Service (Hizmet Türü): 8 bitlik bir alandır ve öncelikli veri trafiği için kullanılır. Bu alanda genellikle Differentiated Services Code Point (DSCP) ve Explicit Congestion Notification (ECN) bilgileri bulunur.
+
+Total Length (Toplam Uzunluk): 16 bitlik bir alan. Başlık ve veri toplam uzunluğunu belirtir.
+
+Identification (Tanımlama): 16 bitlik bir alandır. IP parçalanmışsa, bu alan tüm parçaların birleştirilmesi için kullanılır.
+
+Flags: 3 bitlik bir alandır ve IP parçalanmasıyla ilgili bilgiler içerir (örneğin, "Don't Fragment" (Parçalama Yapma) bayrağı).
+
+Fragment Offset (Parça Konumu): 13 bitlik bir alandır ve parçalanan bir IP paketinin yerini belirtir.
+
+Time to Live (TTL): 8 bitlik bir alandır ve paketin ağda dolaşırken geçebileceği maksimum yönlendirici (router) sayısını belirtir. TTL değeri her yönlendiricide bir azaltılır.
+
+Protocol (Protokol): 8 bitlik bir alandır ve taşınan üst katman protokolünü belirtir. Örneğin, 6 değeri TCP'yi, 17 değeri UDP'yi temsil eder.
+
+Header Checksum (Başlık Kontrol Toplamı): 16 bitlik bir alandır ve başlığın bütünlüğünü kontrol etmek için kullanılır.
+
+Source Address (Kaynak Adres): 32 bitlik bir alandır ve kaynak IP adresini belirtir.
+
+Destination Address (Hedef Adres): 32 bitlik bir alandır ve hedef IP adresini belirtir.

@@ -1,0 +1,9 @@
+{
+    destMac: *
+    sourceMac: *
+    etherType: ipv4 arp
+    sourceIp: *
+    destIp: *
+    protocol: tcp udp icmp snmp
+    port: *
+}
